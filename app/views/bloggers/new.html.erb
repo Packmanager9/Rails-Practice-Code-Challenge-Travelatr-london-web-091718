@@ -1,0 +1,20 @@
+<h1> Create New Blogger<h1>
+
+
+<% if @blogger.errors%>
+<ul>
+    <% @blogger.errors.full_messages.each do |msg|%>
+    <li><%= msg  %></li>>
+<% end %>
+</ul>
+<% end %>
+<%= form_for @blogger do |g| %>
+
+<%=g.label :name  %>
+<%=g.text_field :name %>
+<%=g.label :bio  %>
+<%=g.text_area :bio %>
+<%=g.label :age  %>
+<%=g.number_field :age %>
+<%= g.submit%>
+<% end %>

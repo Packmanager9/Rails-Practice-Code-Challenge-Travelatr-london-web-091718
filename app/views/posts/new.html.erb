@@ -1,0 +1,21 @@
+<h1> Create New Post<h1>
+
+<% if @post.errors%>
+<ul>
+    <% @post.errors.full_messages.each do |msg|%>
+    <li><%= msg  %></li>>
+<% end %>
+</ul>
+<% end %>
+
+<%= form_for @post do |g| %>
+<%=g.label :title  %>
+<%=g.text_field :title %>
+<%=g.label :content  %>
+<%=g.text_area :content %>
+<%=g.label :blogger  %>
+<%=g.collection_select :blogger_id, @bloggers, :id, :name %>
+<%=g.label :destination  %>
+<%=g.collection_select :destination_id, @destinations , :id, :name%>
+<%= g.submit%>
+<% end %>

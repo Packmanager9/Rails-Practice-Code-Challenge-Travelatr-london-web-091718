@@ -1,0 +1,8 @@
+<h1><%= @post.title %></h1>
+<h1><%= @post.content %></h1>
+
+
+<h4> Likes: </h4>
+<%= @post.likes %>
+
+<%= link_to "Like!", like_path(@post), method: :post %>
